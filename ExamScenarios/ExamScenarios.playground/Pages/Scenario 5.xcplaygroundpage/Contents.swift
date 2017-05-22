@@ -27,26 +27,35 @@ let canvas = Canvas(width: 400, height: 600)
 canvas.fillColor = Color.black
 canvas.drawRectangle(centreX: 200, centreY: 300, width: 400, height: 600)
 
+//function that creates arrow
 func arrow (x: Int, y: Int, toX: Int, toY:Int) {
     canvas.drawShapesWithBorders = false
-    canvas.fillColor = Color.orange
-    if x==y {canvas.fillColor = Color.white
-    }
-    canvas.drawRectangle(bottomLeftX: x, bottomLeftY: y, width: 50, height: 20)
-    canvas.drawRectangle(bottomLeftX: x, bottomLeftY: y, width: 20, height: 50)
-    canvas.defaultLineWidth = 20
-    canvas.lineColor = Color.orange
-    if x==y {canvas.lineColor = Color.white
-    }
-    canvas.drawLine(fromX: x+25, fromY: y+25, toX: toX, toY: toY)
+    if x==y  {
+        canvas.fillColor = Color.white
+    } else {
+        canvas.fillColor = Color.init(hue: 313, saturation: 77, brightness: 65, alpha: 100) }
+    canvas.drawRectangle(bottomLeftX: x, bottomLeftY: y, width: 45, height: 15)
+    canvas.drawRectangle(bottomLeftX: x, bottomLeftY: y, width: 15, height: 45)
+    canvas.defaultLineWidth = 15
+    if x==y  {
+    canvas.lineColor = Color.white
+    } else {
+        canvas.lineColor = Color.init(hue: 313, saturation: 77, brightness: 65, alpha: 100)}
+    canvas.drawLine(fromX: x+15, fromY: y+15, toX: toX, toY: toY)
+    
 }
 
-for x in stride(from: 0, to: 400, by: 80){
-arrow(x: x, y: 0, toX: x+55, toY: 55)
-  arrow(x: x, y: 80, toX: x+55, toY: 134)
-    arrow(x: x, y: 160, toX: x+55, toY: 214)
-    arrow(x: x, y: 240, toX: x+55, toY: 294)
-    arrow(x: x, y: x, toX: x+55, toY: x+55)
+for i in 0...5{
+     let x = 67 * i
+    arrow(x: x, y: 0, toX: x+50, toY: 50)
+    arrow(x: x, y: 67, toX: x+50, toY: 117)
+    arrow(x: x, y: 134, toX: x+50, toY: 184)
+    arrow(x: x, y: 201, toX: x+50, toY: 251)
+    arrow(x: x, y: 268, toX: x+50, toY: 318)
+    arrow(x: x, y: 335, toX: x+50, toY: 385)
+    
+   arrow(x: x, y: x, toX: x+50, toY: x+50)
+    
 }
 
 //: ## Template code
