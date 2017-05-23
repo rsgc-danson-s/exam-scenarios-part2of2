@@ -30,7 +30,17 @@ let pink = Color(hue: 326, saturation: 99, brightness: 93, alpha: 100)
 let blue = Color(hue: 240, saturation: 80, brightness: 50, alpha: 50)
 let black = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
 
-// Your code below...
+// draw background 
+canvas.fillColor = Color.init(hue: 87, saturation: 6, brightness: 88, alpha: 100)
+canvas.drawRectangle(centreX: 200, centreY: 300, width: 400, height: 600)
+
+for x in stride(from: 10, to: 495, by: 95){
+    canvas.fillColor = Color.init(hue: 326, saturation: 99, brightness: 93, alpha: 100)
+    for y in stride(from: -20, to: 455, by: 95) {
+       
+     canvas.drawRoundedRectangle(centreX: x, centreY: y, width: 90, height: 90)
+    }
+}
 
 //: ## Template code
 //: The code below is necessary to see the result of your work in the Assistant Editor at right. Please do not remove.

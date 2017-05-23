@@ -23,12 +23,33 @@ import PlaygroundSupport
 // Create a new canvas
 let canvas = Canvas(width: 400, height: 600)
 
-func triangle (sideLength: Int) {
-    for _ in 1...3 {
-       
-       
-    }
-
+//make background
+canvas.fillColor = Color.init(hue: 10, saturation: 85, brightness: 97, alpha: 100)
+canvas.drawRectangle(centreX: 200, centreY: 300, width: 400, height: 600)
+func triangle (x: Int, y:Int, toX: Int, toY: Int) {
+    for _ in 0...2 {
+        if x == y {
+        canvas.lineColor = Color.white
+            canvas.fillColor = Color.white
+        } else { canvas.lineColor = Color.yellow
+        canvas.fillColor = Color.yellow}
+    canvas.drawLine(fromX: x, fromY: y, toX: toX, toY: toY)
+        canvas.drawLine(fromX: x, fromY: y, toX: toX, toY: y)
+        canvas.drawLine(fromX: toX, fromY: y, toX: toX, toY: toY)
+        }
+}
+for i in 0...8 {
+    let x = 50 * i
+triangle(x: x, y: 550, toX: x+50, toY: 600)
+    triangle(x: x, y: 500, toX: x+50, toY: 550)
+    triangle(x: x, y: 450, toX: x+50, toY: 500)
+    triangle(x: x, y: 400, toX: x+50, toY: 450)
+    triangle(x: x, y: 350, toX: x+50, toY: 400)
+    triangle(x: x, y: 300, toX: x+50, toY: 350)
+    triangle(x: x, y: 250, toX: x+50, toY: 300)
+    triangle(x: x, y: 200, toX: x+50, toY: 250)
+    triangle(x: x, y: 150, toX: x+50, toY: 200)
+    
 }
 //: ## Template code
 //: The code below is necessary to see the result of your work in the Assistant Editor at right. Please do not remove.
