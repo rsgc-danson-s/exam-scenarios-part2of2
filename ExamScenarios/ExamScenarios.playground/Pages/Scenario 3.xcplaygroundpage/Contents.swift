@@ -40,6 +40,7 @@ func triangle (x: Int, y:Int, toX: Int, toY: Int) {
 }
 for i in 0...8 {
     let x = 50 * i
+    let y = 550 - 100 * i
 triangle(x: x, y: 550, toX: x+50, toY: 600)
     triangle(x: x, y: 500, toX: x+50, toY: 550)
     triangle(x: x, y: 450, toX: x+50, toY: 500)
